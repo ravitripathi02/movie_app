@@ -101,7 +101,7 @@ function App() {
     }
   };
   const addFavouriteMovie = (movie) => {
-    if (favourites.indexOf(movie) == -1) {
+    if (favourites?.indexOf(movie) == -1) {
       const newFavouriteList = [...favourites, movie];
       setfavourites(newFavouriteList);
 	    console.log(newFavouriteList);
