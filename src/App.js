@@ -109,8 +109,8 @@ function App() {
   }, []);
 
   const saveTolocalStorage = (items) => {
-    console.log(items
-;    localStorage.setItem("fav", JSON.stringify(items));
+    console.log(items);
+   localStorage.setItem("fav", JSON.stringify(items));
   };
   const onTextChange = (event) => {
     clearTimeout(timeOutId);
