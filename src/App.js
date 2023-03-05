@@ -118,8 +118,8 @@ function App() {
     updateTimeoutId(timeOutId);
   };
  const addFavouriteMovie = (movie) => {
+	  console.log(movie);
       const newFavouriteList = [...favourites, movie];
-	 console.log(movie);
 	  console.log(newFavouriteList);
       setfavourites(newFavouriteList);
 	   
