@@ -102,7 +102,7 @@ function App() {
   };
   const addFavouriteMovie = (movie) => {
    const newFavouriteList = [...favourites, movie];
-		setFavourites(newFavouriteList);
+		setfavourites(newFavouriteList);
 		saveToLocalStorage(newFavouriteList);
   };
   const removeFavMovie = (movie) => {
