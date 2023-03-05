@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Img = styled.img`
   object-fit: cover;
   height: 362px;
-  width: 250px;
+  width: 220px;
 `;
 const Movie = styled.div``;
 const MovieContainer = styled.div`
@@ -12,7 +12,7 @@ const MovieContainer = styled.div`
   backgound-color: red;
   flex-direction: column;
   padding: 10px;
-  width: 250px;
+  width: 220px;
   box-shadow: 0 3px 10px 0 #aaa;
   cursor: pointer;
   justify-content: left;
