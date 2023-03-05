@@ -12,7 +12,7 @@ const MovieContainer = styled.div`
   backgound-color: red;
   flex-direction: column;
   padding: 10px;
-  width: 280px;
+  width: 250px;
   box-shadow: 0 3px 10px 0 #aaa;
   cursor: pointer;
   justify-content: left;
