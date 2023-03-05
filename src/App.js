@@ -104,7 +104,7 @@ function App() {
       const newFavouriteList = [...favourites, movie];
       setfavourites(newFavouriteList);
 	    console.log(newFavouriteList);
-      saveTolocalStorage(favourites);
+      saveTolocalStorage(newFavouriteList);
   };
   const removeFavMovie = (movie) => {
     const newFav = favourites.filter(
