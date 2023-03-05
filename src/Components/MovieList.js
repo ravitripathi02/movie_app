@@ -68,7 +68,7 @@ function MovieList(props) {
             <MovieInfo>Year: {movie.Year}</MovieInfo>
             <MovieInfo>Type: {movie.Type}</MovieInfo>
           </InfoCol>
-          <Div onClick={() => console.log(-1)}>
+          <Div onClick={() => props.handleFavouritesClick(movie)}>
             <FavouriteComponent />
           </Div>
         </MovieContainer>
