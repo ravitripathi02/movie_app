@@ -121,7 +121,7 @@ function App() {
 	   
       const newFavouriteList = [...favourites, movie];
       
-      setfavourites(favourites);
+      setfavourites(newFavouriteList);
 	  console.log(favourites);
       saveTolocalStorage(favourites);
 	  
