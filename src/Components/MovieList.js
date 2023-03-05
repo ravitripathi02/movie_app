@@ -78,3 +78,4 @@ function MovieList(props) {
 }
 
 export default MovieList;
+
