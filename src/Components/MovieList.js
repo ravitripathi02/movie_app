@@ -54,24 +54,26 @@ function MovieList(props) {
   };
   return (
     <>
-       (props.movies.map = (movie, index) => (
-        <MovieContainer
-          onClick={() => {
-            props.onMovieSelect(movie.imdbID);
-            scrollToTop();
-          }}
-        >
-          <Img src={movie.Poster} />
-          <MovieName>{movie.Title}</MovieName>
-          <InfoCol>
-            <MovieInfo>Year: {movie.Year}</MovieInfo>
-            <MovieInfo>Type: {movie.Type}</MovieInfo>
-          </InfoCol>
-          <Div onClick={() => props.handleFavouritesClick(movie)}>
-            <FavouriteComponent />
-          </Div>
-        </MovieContainer>
-      ))}
+      {
+        (props.movies.map = (movie, index) => (
+          <MovieContainer
+            onClick={() => {
+              props.onMovieSelect(movie.imdbID);
+              scrollToTop();
+            }}
+          >
+            <Img src={movie.Poster} />
+            <MovieName>{movie.Title}</MovieName>
+            <InfoCol>
+              <MovieInfo>Year: {movie.Year}</MovieInfo>
+              <MovieInfo>Type: {movie.Type}</MovieInfo>
+            </InfoCol>
+            <Div onClick={() => props.handleFavouritesClick(movie)}>
+              <FavouriteComponent />
+            </Div>
+          </MovieContainer>
+        ))
+      }
     </>
   );
 }
