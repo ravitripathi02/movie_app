@@ -120,12 +120,14 @@ function App() {
     updateTimeoutId(timeOutId);
   };
  const addFavouriteMovie = (movie) => {
-	  console.log(movie);
+	  if (favourites?.indexOf(movie) == -1) {
       const newFavouriteList = [...favourites, movie];
-	  console.log(newFavouriteList);
       setfavourites(newFavouriteList);
-	   
       saveTolocalStorage(newFavouriteList);
+    } else {
+      setfavourites(favourites);
+      saveTolocalStorage(favourites);
+    }
   };
   const removeFavMovie = (movie) => {
     const newFav = favourites.filter(
