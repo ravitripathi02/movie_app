@@ -105,7 +105,9 @@ function App() {
   }, [searchValue]);
   useEffect(() => {
     const movieFavourites = JSON.parse(localStorage.getItem("fav"));
-    setfavourites(movieFavourites);
+	  if (movieFavourites) {
+			setfavourites(movieFavourites);
+		}
   }, []);
 
   const saveTolocalStorage = (items) => {
