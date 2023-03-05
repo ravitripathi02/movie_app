@@ -4,6 +4,7 @@ import styled from "styled-components";
 const Img = styled.img`
   object-fit: cover;
   height: 362px;
+  width: 280px;
 `;
 const Movie = styled.div``;
 const MovieContainer = styled.div`
@@ -11,7 +12,7 @@ const MovieContainer = styled.div`
   backgound-color: red;
   flex-direction: column;
   padding: 10px;
-  width: 290px;
+  width: 280px;
   box-shadow: 0 3px 10px 0 #aaa;
   cursor: pointer;
   justify-content: left;
@@ -46,7 +47,6 @@ const Div = styled.div`
 `;
 function MovieList(props) {
   const FavouriteComponent = props.favouriteComponent;
-  const Movies = props.movies;
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -58,7 +58,7 @@ function MovieList(props) {
       {props.movies.map((movie, index) => (
         <MovieContainer
           onClick={() => {
-            props.onMovieSelect(props.movie.imdbID);
+            props.onMovieSelect(movie.imdbID);
             scrollToTop();
           }}
         >
