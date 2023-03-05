@@ -101,11 +101,12 @@ function App() {
     }
   };
   const addFavouriteMovie = (movie) => {
-	   console.log(movie);
+	   
       const newFavouriteList = [...favourites, movie];
       
       setfavourites(favourites);
       saveTolocalStorage(favourites);
+	  console.log(localStorage.getItem("fav"));
  
   };
   const removeFavMovie = (movie) => {
