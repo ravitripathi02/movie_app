@@ -5,6 +5,7 @@ import AddFavourites from "./Components/AddFav";
 import MovieInfo from "./Components/MovieInfo";
 import RemoveFav from "./Components/RemoveFav";
 import Img1 from "./images.png";
+import { Cookies } from "react-cookie";
 const Header = styled.div`
   display: flex;
   width: max-width;
@@ -102,9 +103,14 @@ function App() {
   };
   const addFavouriteMovie = (movie) => {
 	   console.log(movie);
-   const newFavouriteList = [...favourites, movie];
-		setfavourites(newFavouriteList);
-		saveToLocalStorage(newFavouriteList);
+    if (favourites.indexOf(movie) == -1) {
+      const newFavouriteList = [...favourites, movie];
+      setfavourites(newFavouriteList);
+      saveTolocalStorage(newFavouriteList);
+    } else {
+      setfavourites(favourites);
+      saveTolocalStorage(favourites);
+    }
   };
   const removeFavMovie = (movie) => {
     const newFav = favourites.filter(
@@ -122,8 +128,7 @@ function App() {
   }, []);
 
   const saveTolocalStorage = (items) => {
-   
-   localStorage.setItem("fav", JSON.stringify(items));
+    localStorage.setItem("fav", JSON.stringify(items));
   };
   const onTextChange = (event) => {
     clearTimeout(timeOutId);
@@ -131,7 +136,6 @@ function App() {
     setTimeout(() => getMovieReq(event.target.value), 2000);
     updateTimeoutId(timeOutId);
   };
-  
 
   return (
     <>
