@@ -118,7 +118,7 @@ function App() {
     updateTimeoutId(timeOutId);
   };
   const addFavouriteMovie = (movie) => {
-    if (favourites.indexOf(movie) == -1) {
+    if (favourites?.indexOf(movie) == -1) {
       const newFavouriteList = [...favourites, movie];
       setfavourites(newFavouriteList);
       saveTolocalStorage(newFavouriteList);
