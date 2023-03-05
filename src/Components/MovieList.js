@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Img = styled.img`
   object-fit: cover;
   height: 362px;
-  width: 280px;
+  width: 250px;
 `;
 const Movie = styled.div``;
 const MovieContainer = styled.div`
