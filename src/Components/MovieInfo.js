@@ -9,11 +9,18 @@ const Container = styled.div`
   padding: 20px 30px;
   justify-content: center;
   border-bottom: 1px solid lightgray;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 const CoverImg = styled.img`
   object-fit: cover;
   margin-top: 30px;
   height: 352px;
+  @media only screen and (max-width: 768px) {
+    width: 200px;
+  }
 `;
 const InfoColumn = styled.div`
   display: flex;
