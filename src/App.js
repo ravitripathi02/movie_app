@@ -161,7 +161,6 @@ function App() {
         </List>
         <FavList ref={scollToRef}>
           <FavName>Favourites</FavName>
-          {favourites.length > 0 ? (
             <Movielist>
               <MovieList
                 movies={favourites}
@@ -169,11 +168,6 @@ function App() {
                 favouriteComponent={RemoveFav}
               />
             </Movielist>
-          ) : (
-            <Div>
-              <img src={Img1} alt="one" />
-              <Sad>Nothing in favourite</Sad>
-            </Div>
           )}
         </FavList>
       </Container>
