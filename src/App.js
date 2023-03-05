@@ -5,7 +5,6 @@ import AddFavourites from "./Components/AddFav";
 import MovieInfo from "./Components/MovieInfo";
 import RemoveFav from "./Components/RemoveFav";
 import Img1 from "./images.png";
-import { Cookies } from "react-cookie";
 const Header = styled.div`
   display: flex;
   width: max-width;
