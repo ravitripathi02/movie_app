@@ -101,6 +101,7 @@ function App() {
     }
   };
   const addFavouriteMovie = (movie) => {
+	   console.log(movie);
    const newFavouriteList = [...favourites, movie];
 		setfavourites(newFavouriteList);
 		saveToLocalStorage(newFavouriteList);
@@ -121,7 +122,7 @@ function App() {
   }, []);
 
   const saveTolocalStorage = (items) => {
-    console.log(items);
+   
    localStorage.setItem("fav", JSON.stringify(items));
   };
   const onTextChange = (event) => {
