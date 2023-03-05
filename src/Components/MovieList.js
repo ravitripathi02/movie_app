@@ -55,7 +55,7 @@ function MovieList(props) {
   };
   return (
     <>
-      {props.movies.map((movie, index) => (
+      {props.movies?.map((movie, index) => (
         <MovieContainer
           onClick={() => {
             props.onMovieSelect(movie.imdbID);
