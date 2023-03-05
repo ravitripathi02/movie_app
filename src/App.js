@@ -7,6 +7,7 @@ import RemoveFav from "./Components/RemoveFav";
 import Img1 from "./images.png";
 const Header = styled.div`
   display: flex;
+  width: max-width;
   justify-content: space-between;
   flex-direction: row;
   background-color: black;
@@ -27,6 +28,9 @@ const SearchBox = styled.div`
   border-radius: 6px;
   margin-left: 20px;
   width: 50%;
+  @media only screen and (max-width: 768px) {
+    width: 40%;
+  }
 `;
 const SearchInput = styled.input`
   placeholder: "Search";
@@ -38,7 +42,6 @@ const SearchInput = styled.input`
   margin-left: 15px;
 `;
 const List = styled.div`
-  display: flex;
   background-color: beige;
 `;
 const Movielist = styled.div`
@@ -63,6 +66,7 @@ const FavList = styled.div`
   flex-direction: column;
   background-color: white;
   font-weight: bold;
+  justify-content: center;
 `;
 const Div = styled.div`
   display: flex;
@@ -75,7 +79,12 @@ const Sad = styled.div`
   padding-top: 10px;
 `;
 const Img = styled.image``;
-const FavBtn = styled.button``;
+const FavBtn = styled.button`
+  padding: 10px;
+
+  marging-right: 20px;
+`;
+const Mov = styled.div``;
 function App() {
   const scollToRef = useRef();
   const [movies, setMovies] = useState([]);
@@ -142,25 +151,30 @@ function App() {
             Favourite
           </FavBtn>
         </Header>
-        {selectedMovie && (
-          <MovieInfo
-            selectedMovie={selectedMovie}
-            onMovieSelect={onMovieSelect}
-            handleFavouritesClick={addFavouriteMovie}
-          />
-        )}
-        <List>
-          <Movielist>
-            <MovieList
-              movies={movies}
-              handleFavouritesClick={addFavouriteMovie}
-              favouriteComponent={AddFavourites}
+        <Mov>
+          {selectedMovie && (
+            <MovieInfo
+              selectedMovie={selectedMovie}
               onMovieSelect={onMovieSelect}
+              handleFavouritesClick={addFavouriteMovie}
             />
-          </Movielist>
-        </List>
+          )}
+        </Mov>
+        {movies?.length > 0 && (
+          <List>
+            <Movielist>
+              <MovieList
+                movies={movies}
+                handleFavouritesClick={addFavouriteMovie}
+                favouriteComponent={AddFavourites}
+                onMovieSelect={onMovieSelect}
+              />
+            </Movielist>
+          </List>
+        )}
         <FavList ref={scollToRef}>
           <FavName>Favourites</FavName>
+          {favourites?.length > 0 ? (
             <Movielist>
               <MovieList
                 movies={favourites}
@@ -168,6 +182,11 @@ function App() {
                 favouriteComponent={RemoveFav}
               />
             </Movielist>
+          ) : (
+            <Div>
+              <img src={Img1} alt="one" />
+              <Sad>Nothing in favourite</Sad>
+            </Div>
           )}
         </FavList>
       </Container>
