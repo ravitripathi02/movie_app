@@ -46,6 +46,7 @@ const Div = styled.div`
 `;
 function MovieList(props) {
   const FavouriteComponent = props.favouriteComponent;
+  const Movies = props.movies;
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -54,26 +55,24 @@ function MovieList(props) {
   };
   return (
     <>
-      {
-        (props.movies.map = (movie, index) => (
-          <MovieContainer
-            onClick={() => {
-              props.onMovieSelect(movie.imdbID);
-              scrollToTop();
-            }}
-          >
-            <Img src={movie.Poster} />
-            <MovieName>{movie.Title}</MovieName>
-            <InfoCol>
-              <MovieInfo>Year: {movie.Year}</MovieInfo>
-              <MovieInfo>Type: {movie.Type}</MovieInfo>
-            </InfoCol>
-            <Div onClick={() => props.handleFavouritesClick(movie)}>
-              <FavouriteComponent />
-            </Div>
-          </MovieContainer>
-        ))
-      }
+      {props.movies.map((movie, index) => (
+        <MovieContainer
+          onClick={() => {
+            props.onMovieSelect(props.movie.imdbID);
+            scrollToTop();
+          }}
+        >
+          <Img src={movie.Poster} />
+          <MovieName>{movie.Title}</MovieName>
+          <InfoCol>
+            <MovieInfo>Year: {movie.Year}</MovieInfo>
+            <MovieInfo>Type: {movie.Type}</MovieInfo>
+          </InfoCol>
+          <Div onClick={() => props.handleFavouritesClick(movie)}>
+            <FavouriteComponent />
+          </Div>
+        </MovieContainer>
+      ))}
     </>
   );
 }
