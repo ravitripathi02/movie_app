@@ -119,8 +119,10 @@ function App() {
   };
  const addFavouriteMovie = (movie) => {
       const newFavouriteList = [...favourites, movie];
+	 console.log(movie);
+	  console.log(newFavouriteList);
       setfavourites(newFavouriteList);
-	    console.log(newFavouriteList);
+	   
       saveTolocalStorage(newFavouriteList);
   };
   const removeFavMovie = (movie) => {
